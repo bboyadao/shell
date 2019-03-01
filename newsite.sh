@@ -3,6 +3,9 @@ user="${USER}"
 echo $user
 echo "Nhập domain"
 read domain
+echo "Nhập Link Git"
+read linkgit
+
 IFS='.' read -r -a domainname <<< "$domain"
 sleep 0
 echo "----------SETUP DATABASE---------- "
@@ -22,7 +25,7 @@ mkvirtualenv $domainname
 workon $domainname
 sudo su -c "mkdir -p projects/$domainname"
 
-sudo git clone https://colazo@bitbucket.org/colazo/newstubacninh.git /home/$user/projects/$domainname
+sudo git clone $linkgit /home/$user/projects/$domainname
 pip -V
 pip  install -r "/home/$user/projects/$domainname/requirements.txt"
 
