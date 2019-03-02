@@ -78,6 +78,9 @@ sudo su -c "chown -R $user:$user /var/log/uwsgi/$domainname.log"
 echo "---------- SETUP SCRAPYD ---------------"
 
 echo "
+
+[Unit]
+Description=scrapyd_$domainname
 [program:scrapyd_$domainname]
 command = source home/$user/virtualenvs/$domainname/bin/activate
 directory = /home/$user/projects/$domainname/crawler_news
@@ -86,7 +89,7 @@ autostart = true
 autorestart = true
 redirect_stderr = true
 stdout_logfile = /var/log/supervisor/$domainname.log
-stderr_logfile = /var/log/supervisor/$domainname_errors.log
+stderr_logfile = /var/log/supervisor/$domainname errors.log
 " | sudo tee "/etc/supervisor/conf.d/$domainname.conf"
 
 echo "---------- SETUP NGINX ---------------"
