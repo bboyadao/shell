@@ -23,7 +23,12 @@ I, Cài đặt máy chủ.
 
 II, Triển khai trên máy chủ mới.
 
-  1, Copy nội dung trong file newvps sang newvps.sh và chạy.
+  1, Copy nội dung trong file newvps sang newvps.sh.
+
+    - command: curl https://raw.githubusercontent.com/bboyadao/shell/master/newvps.sh  -o newvps.sh
+
+
+  2, Chạy file newvps.sh
 
     - command: sh newvps.sh
 
@@ -33,6 +38,10 @@ II, Triển khai trên máy chủ mới.
     - command: source ~/.bashrc
 
 III, Thêm site
-1, Copy nội dung trong file newvps sang newsite.sh và chạy.
+  1, Copy nội dung trong file newvps vào newsite.sh.
 
-  - command: sh newsite.sh
+    - command: curl https://raw.githubusercontent.com/bboyadao/shell/master/newsite.sh  -o newsite.sh
+
+  2, Chạy file newsite.sh
+
+    - command: sh newsite.sh
