@@ -1,0 +1,38 @@
+
+Cài đặt máy chủ (I) -> Triển khai trên máy chủ mới (II) -> Thêm site(III)
+
+I, Cài đặt máy chủ.
+
+  1, Tạo user
+    - command: sudo adduser tên_user
+
+
+  2, add user vào nhóm quản trị.
+
+    - command: sudo usermod -aG sudo tên_user
+
+
+  3, Chuyển qua user vừa khởi tạo.
+
+    - command: sudo su tên_user
+
+
+  4, Chuyển về thư mục user để làm việc
+
+    - command: cd ~
+
+II, Triển khai trên máy chủ mới.
+
+  1, Copy nội dung trong file newvps sang newvps.sh và chạy.
+
+    - command: sh newvps.sh
+
+
+  2, Set biến môi trường cho virtualenvwrap
+
+    - command: source ~/.bashrc
+
+III, Thêm site
+1, Copy nội dung trong file newvps sang newsite.sh và chạy.
+
+  - command: sh newsite.sh
